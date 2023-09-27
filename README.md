@@ -27,21 +27,21 @@ Here is an example [`scrape_config`](https://prometheus.io/docs/prometheus/lates
 
 ## Exported Metrics
 
-| Name | Description |
-| ---- | ----------- |
-| net_peers | Number of peers currently connected to the client. |
-| eth_block_number | Number of the most recent block. |
-| eth_block_timestamp | Timestamp of the most recent block. |
-| eth_gas_price | Current gas price in wei. *Might be inaccurate*. |
-| eth_earliest_block_transactions | Number of transactions in the earliest block. |
-| eth_latest_block_transactions | Number of transactions in the latest block. |
-| eth_pending_block_transactions | The number of transactions in pending block. |
-| eth_hashrate | Hashes per second that this node is mining with. |
-| eth_sync_starting | Block number at which current import started. |
-| eth_sync_current | Number of most recent block. |
-| eth_sync_highest | Estimated number of highest block. |
-| parity_net_active_peers | Number of active peers. *Available only for OpenEthereum*. |
-| parity_net_connected_peers | Number of peers currently connected to this client. *Available only for OpenEthereum*. |
+| Name                            | Description                                                                            |
+| ------------------------------- | -------------------------------------------------------------------------------------- |
+| net_peers                       | Number of peers currently connected to the client.                                     |
+| eth_block_number                | Number of the most recent block.                                                       |
+| eth_block_timestamp             | Timestamp of the most recent block.                                                    |
+| eth_gas_price                   | Current gas price in wei. *Might be inaccurate*.                                       |
+| eth_earliest_block_transactions | Number of transactions in the earliest block.                                          |
+| eth_latest_block_transactions   | Number of transactions in the latest block.                                            |
+| eth_pending_block_transactions  | The number of transactions in pending block.                                           |
+| eth_hashrate                    | Hashes per second that this node is mining with.                                       |
+| eth_sync_starting               | Block number at which current import started.                                          |
+| eth_sync_current                | Number of most recent block.                                                           |
+| eth_sync_highest                | Estimated number of highest block.                                                     |
+| parity_net_active_peers         | Number of active peers. *Available only for OpenEthereum*.                             |
+| parity_net_connected_peers      | Number of peers currently connected to this client. *Available only for OpenEthereum*. |
 
 ## Development
 
@@ -54,3 +54,11 @@ Contributions are greatly appreciated. The project follows the typical GitHub pu
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+## Fork
+In order to push docker image have to tag with
+```
+git tag v0.0.5
+git push origin v0.0.5
+```
