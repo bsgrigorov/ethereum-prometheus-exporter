@@ -51,14 +51,14 @@ func main() {
 
 	registry := prometheus.NewPedanticRegistry()
 	registry.MustRegister(
-		collector.NewNetPeerCount(rpc),
+		// collector.NewNetPeerCount(rpc),
 		collector.NewEthBlockNumber(rpc),
 		collector.NewEthBlockTimestamp(rpc),
 		collector.NewEthGasPrice(rpc),
 		collector.NewEthEarliestBlockTransactions(rpc),
 		collector.NewEthLatestBlockTransactions(rpc),
 		collector.NewEthPendingBlockTransactions(rpc),
-		collector.NewEthHashrate(rpc),
+		// collector.NewEthHashrate(rpc),
 		// collector.NewEthSyncing(rpc),
 		// collector.NewParityNetPeers(rpc),
 	)
