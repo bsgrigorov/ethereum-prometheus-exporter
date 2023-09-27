@@ -59,8 +59,8 @@ func main() {
 		collector.NewEthLatestBlockTransactions(rpc),
 		collector.NewEthPendingBlockTransactions(rpc),
 		collector.NewEthHashrate(rpc),
-		collector.NewEthSyncing(rpc),
-		collector.NewParityNetPeers(rpc),
+		// collector.NewEthSyncing(rpc),
+		// collector.NewParityNetPeers(rpc),
 	)
 
 	handler := promhttp.HandlerFor(registry, promhttp.HandlerOpts{
