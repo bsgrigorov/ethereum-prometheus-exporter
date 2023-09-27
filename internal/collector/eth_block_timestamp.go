@@ -9,21 +9,23 @@ import (
 type EthBlockTimestamp struct {
 	rpc  *rpc.Client
 	desc *prometheus.Desc
+	url  string
 }
 
 type blockResult struct {
 	Timestamp hexutil.Uint64
 }
 
-func NewEthBlockTimestamp(rpc *rpc.Client) *EthBlockTimestamp {
+func NewEthBlockTimestamp(rpc *rpc.Client, url string) *EthBlockTimestamp {
 	return &EthBlockTimestamp{
 		rpc: rpc,
 		desc: prometheus.NewDesc(
 			"eth_block_timestamp",
 			"timestamp of the most recent block",
-			nil,
+			[]string{"rpc_url"},
 			nil,
 		),
+		url: url,
 	}
 }
 
@@ -41,5 +43,5 @@ func (collector *EthBlockTimestamp) Collect(ch chan<- prometheus.Metric) {
 
 	value := float64(result.Timestamp)
 
-	ch <- prometheus.MustNewConstMetric(collector.desc, prometheus.GaugeValue, value)
+	ch <- prometheus.MustNewConstMetric(collector.desc, prometheus.GaugeValue, value, collector.url)
 }

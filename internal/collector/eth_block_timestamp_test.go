@@ -17,7 +17,7 @@ func TestEthBlockTimestampCollectError(t *testing.T) {
 		t.Fatalf("rpc connection error: %#v", err)
 	}
 
-	collector := NewEthBlockTimestamp(rpc)
+	collector := NewEthBlockTimestamp(rpc, "http://localhost")
 	ch := make(chan prometheus.Metric, 1)
 
 	collector.Collect(ch)
@@ -54,7 +54,7 @@ func TestEthBlockTimestampCollect(t *testing.T) {
 		t.Fatalf("rpc connection error: %#v", err)
 	}
 
-	collector := NewEthBlockTimestamp(rpc)
+	collector := NewEthBlockTimestamp(rpc, rpcServer.URL)
 	ch := make(chan prometheus.Metric, 1)
 
 	collector.Collect(ch)
